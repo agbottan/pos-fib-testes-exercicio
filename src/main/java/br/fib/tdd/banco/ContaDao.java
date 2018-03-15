@@ -1,4 +1,4 @@
-package br.aula.exercicios.banco.dao;
+package br.fib.tdd.banco;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import br.banco.dominio.Conta;
+import br.fib.tdd.banco.Conta;
 
 public class ContaDao {
     private Connection conexao;

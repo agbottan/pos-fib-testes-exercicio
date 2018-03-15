@@ -1,4 +1,4 @@
-package br.aula.exercicio.banco;
+package br.fib.tdd.banco;
 
 public class Conta {
     private Long id;

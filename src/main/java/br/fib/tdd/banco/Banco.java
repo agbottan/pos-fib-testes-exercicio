@@ -1,8 +1,8 @@
 package br.fib.tdd.banco;
 
 import java.util.List;
-import br.banco.dao.ContaDao;
-import br.banco.dominio.Conta;
+import br.fib.tdd.banco.ContaDao;
+import br.fib.tdd.banco.Conta;
 
 public class Banco {
     private ContaDao dao;

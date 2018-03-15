@@ -1,4 +1,4 @@
-package br.aula.exercicios.salario;
+package br.fib.tdd.banco;
 
 public class Salario {
 	

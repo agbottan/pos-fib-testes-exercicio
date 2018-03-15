@@ -1,9 +1,9 @@
-package br.aula.exercicios.banco.builder;
+package br.fib.tdd.bancoTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import br.banco.dominio.Conta;
-import br.banco.dominio.Usuario;
+import br.fib.tdd.banco.Conta;
+import br.fib.tdd.banco.Usuario;
 
 public class ContaBuilder {
     private List<Conta> contas;

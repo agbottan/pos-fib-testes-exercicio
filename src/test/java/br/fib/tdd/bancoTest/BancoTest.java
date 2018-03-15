@@ -1,10 +1,10 @@
-package br.aula.exercicios.salario;
+package br.fib.tdd.bancoTest;
 
 import static org.junit.Assert.assertEquals;
-import br.aula.exercicios.salario.Salario;
+import br.fib.tdd.banco.Salario;
 import org.junit.Test;
 
-public class SalarioTest {
+public class BancoTest {
 	
 	Salario salario = new Salario(); 
 	

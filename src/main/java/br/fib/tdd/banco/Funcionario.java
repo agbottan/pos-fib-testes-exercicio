@@ -1,4 +1,4 @@
-package br.aula.exercicios.salario;
+package br.fib.tdd.banco;
 
 public class Funcionario {
 	
@@ -6,7 +6,7 @@ public class Funcionario {
 	public double valorHora;
 	public int quantidadeDependentes;
 	
-	Funcionario(){};
+	public Funcionario(){};
 	
 	/*
 	Funcionario(String _nome, double _valorHora, int _quantidadeDependentes){
