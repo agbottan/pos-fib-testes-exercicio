@@ -1,4 +1,4 @@
-package br.fib.tdd.banco;
+package br.fib.tdd.banco.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,12 +11,12 @@ import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
-import br.fib.tdd.banco.Conta;
+import br.fib.tdd.banco.modelo.ContaCorrente;
 
-public class ContaDao {
+public class ContaCorrenteDao {
     private Connection conexao;
 
-    public ContaDao() {
+    public ContaCorrenteDao() {
         try {
             this.conexao = DriverManager.getConnection("jdbc:mysql://localhost/mocks", "root", "123456");
         } catch (Exception e) {
@@ -24,14 +24,14 @@ public class ContaDao {
         }
     }
 
-    public List<Conta> getContas() {
+    public List<ContaCorrente> getContas() {
         try {
             String sql = "SELECT * FROM CONTA;";
             PreparedStatement ps = conexao.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            List<Conta> contas = new ArrayList<Conta>();
+            List<ContaCorrente> contas = new ArrayList<ContaCorrente>();
             while (rs.next()) {
-                Conta conta = new Conta(rs.getLong("id"), rs.getDouble("saldo"));
+            	ContaCorrente conta = new ContaCorrente(rs.getLong("id"), rs.getDouble("saldo"));
                 contas.add(conta);
             }
             rs.close();
@@ -42,7 +42,7 @@ public class ContaDao {
         }
     }
 
-    public void atualizaConta(Conta conta) throws RuntimeErrorException {
+    public void atualizaConta(ContaCorrente conta) throws RuntimeErrorException {
         if (conta.getSaldo() > 0.0) {
             try {
                 String sql = "UPDATE CONTA SET SALDO=? WHERE ID = ?;";
@@ -57,7 +57,7 @@ public class ContaDao {
         }
     }
 
-    public void salvaConta(Conta conta) {
+    public void salvaConta(ContaCorrente conta) {
         try {
             String sql = "INSERT INTO CONTA (SALDO) VALUES (?);";
             PreparedStatement ps = conexao.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
